@@ -8,11 +8,12 @@ async function currencyConverter(amount, country) {
   const jsonifiedResponse = await converter();
   if (jsonifiedResponse === false) {
     $("#output").text("I'm sorry, something went wrong wtih your request");
+  } else if (!jsonifiedResponse.conversion_rates[country]) {
+    $(".showOutput").html(`<p>Change currency conversion</p>${jsonifiedResponse.error}`);
   } else {
     let convertTo = jsonifiedResponse.conversion_rates[country];
     let exchange = (amount * convertTo);
     $("#output").html(exchange + country);
-    console.log(exchange);
   }
 }
 $(document).ready(function() {

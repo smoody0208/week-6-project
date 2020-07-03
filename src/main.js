@@ -4,12 +4,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { converter } from './currency-converter.js';
 
-function currencyConverter(amount, country) {
+async function currencyConverter(amount, country) {
   const jsonifiedResponse = await callApi();
   if (jsonifiedResponse === false) {
     $("#output").text("I'm sorry, something went wrong wtih your request");
   } else {
-    let convertTo = jsonifiedResponse.conversion_rates[amount];
+    let convertTo = jsonifiedResponse.conversion_rates[country];
     let exchange = (amount * convertTo);
     $("#output").html(exchange + converTo);
   }

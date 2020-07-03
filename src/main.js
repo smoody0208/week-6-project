@@ -5,16 +5,17 @@ import './styles.css';
 import { converter } from './currency-converter.js';
 
 async function currencyConverter(amount, country) {
-  const jsonifiedResponse = await callApi();
+  const jsonifiedResponse = await converter();
   if (jsonifiedResponse === false) {
     $("#output").text("I'm sorry, something went wrong wtih your request");
   } else {
     let convertTo = jsonifiedResponse.conversion_rates[country];
     let exchange = (amount * convertTo);
-    $("#output").html(exchange + converTo);
+    $("#output").html(exchange + country);
+    console.log(exchange);
   }
 }
-document.readyState(function() {
+$(document).ready(function() {
   $("#calculate").click(function(event) {
     event.preventDefault()
     let amount = parseInt($("#amount").val());

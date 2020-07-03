@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <script type="text/javascript" src="bundle.js"></script>
-  <title>Project Name</title>
-</head>
-
-<body>
-  <!-- Some sort of HTML that directly correlates with your main.js -->
-
-  <!-- Uncomment the following code to check that bootstrap is working! -->
-
-  <!-- <div class="card">
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top"
-      src="https://images.unsplash.com/photo-1534278931827-8a259344abe7?ixlib=rb-1.2.1&w=1000&q=80"
-      alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This should be a working card class!
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchanger</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Currency Exchanger</h1>
+      <form id="curreny-exchanger" class="form-group">
+        <label for="amount">Please enter the amount you would like to convert in USD:</label>
+        <input class="form-control" id="amount" type="number" placeholder="USD">
+        <br>
+        <label for="exchange">Please choose the country you would like to exchange currency to:</label>
+        <select class="form-control" name="country" id="country">
+          <option value="AUD">Australia</option>
+          <option value="GBP">Britain</option>
+          <option value="BGN">Bulgaria</option>
+          <option value="CAD">Canada</option>
+          <option value="CNY">China</option>
+          <option value="EUR">Europe</option>
+          <option value="JPY">Japan</option>
+          <option value="MXN">Mexico</option>
+          <option value="CHF">Switzerland</option>
+          <option value="AED">United Arab Emirates</option>
+          <option value="GBP">United Kingdom</option>
+        </select>
+        <br>
+        <button type="submit" id="calculate" class="btn btn-info btn-lg">Calculate</button>
+      </form>
+      <div id="output"></div>
     </div>
-  </div>
-</div> -->
-</body>
-
+  </body>
 </html>

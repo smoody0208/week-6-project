@@ -4,16 +4,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import { converter } from './currency-converter.js';
 
-async function currencyConverter(amount, country, country2) {
-  const jsonifiedResponse = await converter(amount, country, country2);
+async function currencyConverter(amount, country) {
+  const jsonifiedResponse = await converter();
   if (jsonifiedResponse === false) {
     $("#output").text("I'm sorry, something went wrong wtih your request");
-  } else if (!jsonifiedResponse.conversion_rates[country2]) {
+  } else if (!jsonifiedResponse.conversion_rates[country]) {
     $(".showOutput").html(`<p>Change currency conversion</p>${jsonifiedResponse.error}`);
   } else {
-    let convertTo = jsonifiedResponse.conversion_result;
+    let convertTo = jsonifiedResponse.conversion_rates[country];
     let exchange = (amount * convertTo);
-    $("#output").html(exchange + country2);
+    $("#output").html(exchange + country);
   }
 }
 $(document).ready(function() {
@@ -21,10 +21,9 @@ $(document).ready(function() {
     event.preventDefault()
     let amount = parseInt($("#amount").val());
     let country = $("#country").val();
-    let country2 = $("#country2").val();
     $("#amount").val("");
     $("#country").val("");
-    $()
-    currencyConverter(amount, country, country2);
+    $
+    currencyConverter(amount, country);
   })
 })

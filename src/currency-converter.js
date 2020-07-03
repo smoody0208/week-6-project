@@ -1,5 +1,4 @@
-export class Converter{
-  async callApi() {
+export async function converter() {
     try {
       const response = await fetch (`https://v6.exchangerate-api.com/v6/%{process.env.API_KEY}/latest/USD`);
       let jsonifiedResponse;
@@ -10,6 +9,7 @@ export class Converter{
       }
       return jsonifiedResponse;
     } catch(error) {
+      return false;
+    }
   }
- }
-}
+

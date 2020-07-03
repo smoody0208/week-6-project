@@ -10,11 +10,12 @@ async function currencyConverter2(amount, country, country2) {
     $("#output").text("I'm sorry, something went wrong wtih your request");
   } else if (!jsonifiedResponse.conversion_rates) {
     $(".showOutput").html(`<p>Change currency conversion</p>${jsonifiedResponse.error}`);
+  } else if (amount < 0) {
+    $("#output").text("Please enter a positive number");
   } else {
     let convertTo = jsonifiedResponse.conversion_rates[country] / jsonifiedResponse.conversion_rates[country2];
     let exchange = amount * convertTo;
-    console.log(jsonifiedResponse.conversion_rates[country2]);
-    $("#output").html(`${exchange}`);
+    $("#output").html(`${exchange} ${country} from ${country2}`);
   }
 }
 $(document).ready(function() {

@@ -16,7 +16,7 @@ _This is an application that will take a users inputted amount (in USD) and outp
 | ** 2. The program will allow the user to select the currency they would like to convert to | EUR | EUR |
 | ** 3. The program will return an error message if the user trys to convert to a currency that is not supported | "something" | "Currency does not exist, please try a different currency" |
 | ** 4. The program will return the converted currency | 100 USD | 88.94 EUR |
-| ** . The program will allow the user to convert between all currencies | EUR | USD |
+| ** 5. The program will allow the user to convert between all currencies | EUR | USD |
 
 ## Setup/Installation Requirements
 
